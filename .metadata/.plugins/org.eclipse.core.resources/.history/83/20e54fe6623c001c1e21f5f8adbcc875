@@ -1,0 +1,39 @@
+package com.kh.spring.common.mail;
+
+import java.util.Date;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.stereotype.Component;
+
+@Component
+public class MailSender {
+	
+	JavaMailSender mailSender;
+	
+	public MailSender(JavaMailSender mailSender) {
+		this.mailSender = mailSender;
+	}
+	
+	public void send(String to, String subject, String htmlText) {
+		
+		MimeMessage msg = mailSender.createMimeMessage();
+	 	
+	 	try {
+			msg.setFrom("kwon41147406@gmail.com");
+			msg.setRecipients(Message.RecipientType.TO, "kkh47406@naver.com");
+	        msg.setSubject("메일테스트");
+	        msg.setSentDate(new Date());
+	        msg.setText("<h1>Email Test</h1>","UTF-8","html");
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        
+        mailSender.send(msg);
+	}
+}

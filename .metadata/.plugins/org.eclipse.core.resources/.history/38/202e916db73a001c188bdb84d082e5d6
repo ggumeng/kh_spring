@@ -1,0 +1,6 @@
+package com.kh.spring.common.validator;
+
+public class ValidateResult {
+	
+	Map<String, Object> errorInfo;
+}

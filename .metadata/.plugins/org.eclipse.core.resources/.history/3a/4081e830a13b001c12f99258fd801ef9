@@ -1,0 +1,22 @@
+package com.kh.spring.common.mail;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class MailTemplate {
+
+	private String templateName;
+	private Map<String, String> commandMap = new HashMap<String, String>();
+	
+	public MailTemplate(String templateName) {
+		this.templateName = templateName;
+	}
+	
+	public void addMailComponent(String name, String component) {
+		commandMap.put(name, component);
+	}
+	
+	public Map<String, String> getMailComp(){
+		
+	}
+}

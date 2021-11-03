@@ -1,0 +1,19 @@
+package com.kh.spring.member.validator;
+
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+public class JoinFormValidator implements Validator{
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return JoinForm.class.equals(clazz);
+	}
+
+	@Override
+	public void validate(Object target, Errors errors) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

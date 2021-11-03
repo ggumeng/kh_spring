@@ -1,0 +1,12 @@
+package com.kh.spring.common.validator;
+
+import java.util.Map;
+
+public class ValidateResult {
+	
+	private Map<String, Object> errorInfo;
+	
+	public ValidateResult() {
+		// TODO Auto-generated constructor stub
+	}
+}

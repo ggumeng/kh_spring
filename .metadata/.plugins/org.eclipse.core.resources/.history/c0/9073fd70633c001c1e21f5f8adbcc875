@@ -1,0 +1,45 @@
+package com.kh.spring.member.model.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.kh.spring.common.mail.MailSender;
+import com.kh.spring.member.model.dto.Member;
+import com.kh.spring.member.model.repository.MemberRepository;
+import com.kh.spring.member.validator.JoinForm;
+
+@Service
+public class MemberService {
+	
+	@Autowired
+	private MemberRepository memberRepository;
+	private MailSender mailSender;
+	private RestTemplate http;
+	
+	public MemberService(MemberRepository memberRepository, MailSender mailSender) {
+		super();
+		this.memberRepository = memberRepository;
+		this.mailSender = mailSender;
+	}
+
+	public void insertMember(JoinForm form) {
+		memberRepository.insertMember(form);
+	}
+
+	public Member authenticateUser(Member member) {
+		return memberRepository.authenticateUser(member);
+	}
+
+	public Member selectMemberByUserId(String userId) {
+		return memberRepository.selectMemberByUserId(userId);
+	}
+
+	public void authenticateByEmail(JoinForm form, String token) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+}

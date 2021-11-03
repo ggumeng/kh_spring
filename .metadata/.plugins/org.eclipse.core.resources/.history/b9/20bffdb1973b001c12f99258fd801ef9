@@ -1,0 +1,31 @@
+package com.kh.toy.common.code;
+
+//enum(enumerated type) : 열거형
+//서로 연관된 상수들의 집합.
+//서로 연관된 상수들을 하나의 묶음으로 다루기 위한 enum만의 문법적 형식과 메서드를 제공
+public enum MemberGrade {
+	
+	//회원등급코드  ME00은 info가 '일반'이고 연장가능횟수가 1회
+	//enum은 내부적으로 class이다.
+	//ME00("일반",1) -> public static final MemberGrade ME00 = new MemberGrade("일반",1);
+	ME00("일반",1),
+	ME01("성실",2),
+	ME02("우수",3),
+	ME03("VIP",4);
+	
+	private String desc;
+	private int extendableCnt;
+	
+	private MemberGrade(String desc, int extendableCnt) {
+		this.desc = desc;
+		this.extendableCnt = extendableCnt;
+	}
+	
+	public String desc() {
+		return desc;
+	}
+	
+	public int extendableCnt() {
+		return extendableCnt;
+	}
+}

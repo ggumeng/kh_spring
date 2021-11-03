@@ -1,0 +1,17 @@
+package com.kh.spring.common.validator;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ValidateResult {
+	
+	private Map<String, Object> errorInfo;
+	
+	public ValidateResult() {
+		errorInfo = new HashMap<String, Object>();
+	}
+	
+	public void addError(Error error) {
+		
+	}
+}

@@ -1,0 +1,9 @@
+package com.kh.spring.member.validator;
+
+public class JoinForm {
+
+	private String userId;
+	private String password;
+	private String tell;
+	private String email;
+}
